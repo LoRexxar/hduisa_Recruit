@@ -1,0 +1,115 @@
+/* my-app.css */
+.navbar {
+  background: #080808;
+  color: #888
+}
+
+.navbar:after {
+  background-color: #080808
+}
+
+.page {
+  background: #111
+}
+
+.content-block-inner {
+  background: #181818;
+  color: #1ec503
+}
+
+.content-block-inner:before {
+  background-color: #181818
+}
+
+.content-block-inner:after {
+  background-color: #181818
+}
+
+.list-block ul{
+  background: #181818;
+  color: #888;
+}
+
+.list-block ul:before {
+  background: #181818;
+}
+
+.list-block ul:after {
+  background: #181818;
+}
+
+.list-block .item-inner:after{
+  background-color: #444
+}
+
+.toolbar {
+  background: #181818
+}
+
+.toolbar:before {
+  background-color: #181818
+}
+
+.content-block-title {
+  /*color: #1ec503*/
+  color: #888
+}
+
+input[type=text]{
+  color: #fff !important;
+}
+
+input[type=tel]{
+  color: #fff !important;
+}
+
+input[type=email]{
+  color: #fff !important;
+}
+
+input[type=password]{
+  color: #fff !important;
+}
+
+select {
+  color: #fff !important;
+}
+
+textarea {
+  color: #fff !important;
+}
+/*
+.button {
+  border: 1px solid #888;
+  color: #888;
+}*/
+
+/* more-icon */
+i.icon.icon-form-library {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/marquisf-form-library.svg);
+}
+
+i.icon.icon-form-book {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/marquisf-form-book.svg);
+}
+
+i.icon.icon-form-qq {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/marquisf-form-qq.svg);
+}
+
+i.icon.icon-hduisa {
+    width: 29px;
+    height: 29px;
+    background-image: url(../img/hduisa.png);
+    border-radius: 6px;
+}
+
+i.icon-form-checkbox {
+  background-color: #333 !important
+}

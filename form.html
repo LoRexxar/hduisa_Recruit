@@ -1,0 +1,165 @@
+
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">REGISTRATION</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="form" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content hide-bars-on-scroll form-page">
+      <div class="content-block-title">注册信息 (必填条目)</div>
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-name"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">姓名</div>
+                <div class="item-input">
+                  <input type="text" class="reg-message" name="userName" placeholder="Your name"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-name"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">学号</div>
+                <div class="item-input">
+                  <input type="text" class="reg-message" name="studyNumber" placeholder="Your studyNumber"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-email"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">E-mail</div>
+                <div class="item-input">
+                  <input type="email" class="reg-message" name="mail" placeholder="E-mail"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-library"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">学院</div>
+                <div class="item-input">
+                  <input type="text" class="reg-message" name="college" placeholder="College"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-book"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">专业</div>
+                <div class="item-input">
+                  <input type="text" class="reg-message" name="major" placeholder="Major"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-tel"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">电话 (长号)</div>
+                <div class="item-input">
+                  <input type="tel" class="reg-message" name="phoneNumber" placeholder="Phone"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-gender"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">性别</div>
+                <div class="item-input">
+                  <select class="reg-message" name="userSex">
+                    <option value="0">男</option>
+                    <option value="1">女</option>
+                    <option value="2">其他</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block-title">注册信息 (选填条目)</div>
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-qq"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">QQ</div>
+                <div class="item-input">
+                  <input type="text" class="reg-message" name="qqNumber" placeholder="QQ"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="align-top">
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-comment"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">自我介绍</div>
+                <div class="item-input">
+                  <textarea class="reg-message" name="selfIntro"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="align-top">
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-comment"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">备注</div>
+                <div class="item-input">
+                  <textarea class="reg-message" name="remark"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block-title">感兴趣的方向</div>
+      <div class="list-block">
+        <ul class="interest-ul"></ul>
+      </div>
+      <div class="content-block">
+        <div class="content-block-inner">
+          <p style="letter-spacing:1px;line-height:22px;color:#888">HDUISA不会有意泄漏您的个人信息<br/>并会尽可能地保证它们的安全</p>
+        </div>
+      </div>
+      
+      <div class="content-block">
+        <div class="row">
+          <div class="col-50"><a href="#" class="back link button button-big button-fill color-red">Cancel</a></div>
+          <div class="col-50">
+            <input type="submit" value="Submit" class="button button-big button-fill color-green form-submit"/>
+          </div>
+        </div>
+      </div>
+      <div class="content-block" style="text-align:center;font-size:12px;margin-bottom:15px">Powered by HDUISA</div>
+
+
+    </div>
+  </div>
+</div>

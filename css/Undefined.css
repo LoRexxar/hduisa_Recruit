@@ -1,0 +1,14 @@
+ul>li{
+	float:left;
+	list-style: none;
+}
+ol>li{
+
+	list-style: none;
+}
+input::checkbox{
+	RepeatDirection="Horizontal";
+}
+#namelist>li{
+	border:1px solid green;
+}

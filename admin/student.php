@@ -104,7 +104,7 @@ else {
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">性别:</h4>
-                <select name="sex"  class="form-control">
+                <select name="sex"  class="form-control edit-message">
 				  <option value ="0" <?php if($res['sex']==0) echo "selected=\"selected\"";?>>男</option>
 				  <option value ="1" <?php if($res['sex']==1) echo "selected=\"selected\"";?>>女</option>
 				  <option value="2" <?php if($res['sex']==2) echo "selected=\"selected\"";?>>保密</option>
@@ -129,7 +129,7 @@ else {
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">方向:</h4>
 			      <div class="list-block">
-			        <ul class="interest-ul" style="float:left;width:500px;">
+			        <ul class="interest-ul" style="float:left;width:500px;"><div class="row">
 			        	<?php 
 			        		for($i=1;$i<9;$i++){
 			        		switch ($i) {
@@ -162,13 +162,14 @@ else {
 			        				break;
 			        		}
 			        		if(in_array($i,$res['direction'])){
-			        			echo '<li><label class="label-checkbox item-content"><input type="checkbox" class="interest-checkbox" checked="checked" id="'.$i.'" name="ks-checkbox" /><div class="item-media"><i class="icon icon-form-checkbox"></i></div><div class="item-inner"><div class="item-title">'.$depart_name.'</div></div></label></li>';
+			        			echo '<div class="col-md-4"><li><label class="label-checkbox item-content"><input type="checkbox" class="interest-checkbox" checked="checked" id="'.$i.'" name="ks-checkbox" /><div class="item-media"><i class="icon icon-form-checkbox"></i></div><div class="item-inner"><div class="item-title">'.$depart_name.'</div></div></label></li></div>';
 			        		}
 			        			else{
-			        				echo '<li><label class="label-checkbox item-content"><input type="checkbox" class="interest-checkbox" id="'.$i.'" name="ks-checkbox" /><div class="item-media"><i class="icon icon-form-checkbox"></i></div><div class="item-inner"><div class="item-title">'.$depart_name.'</div></div></label></li>';
+			        				echo '<div class="col-md-4"><li><label class="label-checkbox item-content"><input type="checkbox" class="interest-checkbox" id="'.$i.'" name="ks-checkbox" /><div class="item-media"><i class="icon icon-form-checkbox"></i></div><div class="item-inner"><div class="item-title">'.$depart_name.'</div></div></label></li></div>';
 			        		}
 			        	}
 			        	?>
+				</div>
 			        </ul>
 			      </div>
 			      <div class="content-block">

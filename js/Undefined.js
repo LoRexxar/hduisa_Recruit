@@ -120,22 +120,7 @@
     });
 
     }
-/*    function getNew(page){
-        url="//localhost/hduisa/admin/logout.php";
-        $.ajax({
-        type: "GET",
-        url: url,
-        dataType: "text",
-        data:{"page":page},
-        async: false,
-        success: function (payloads) {
-            show(payloads);
-        },
-        error: function () {
-            alert('something wrong error 009');
-        }
-    });
-    }*/
+
     function show(msg,url){
         msg = JSON.parse(msg);
         var message = msg['message'];
@@ -151,7 +136,7 @@
         }
         else if(msg['code']==2){
             $('#msg').css("color","#f0ffff");
-            $('#msg').html("<div class='col-md-3'>欢迎~</div>"+"<div class='col-md-10' style='color:gold'>"+message+"</div>");
+            $('#msg').html("欢迎"+"<p style='color:gold'>"+message+"</p>");
             setTimeout("location.href='user.php'",1000);
 
         }

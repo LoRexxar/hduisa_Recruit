@@ -38,7 +38,7 @@
         dataType: "text",
         async: false,
         success: function (payloads) {
-            show(payloads,'user.php');
+            resModify(payloads,'user.php');
         },
         error: function () {
             alert('something wrong error 002');
@@ -142,3 +142,20 @@
         }
 
     }
+
+function resModify(msg,url){
+        msg = JSON.parse(msg);
+        var message = msg['message'];
+        message = unescape(message.replace(/\u/g, "%u"));
+        if(msg['code']==0){
+            $('#msg').css("color","green");
+            alert(message);
+            setTimeout('location.href="'+url+'"',1000);
+            $('#msg').html(message);
+        }
+        else if(msg['code']==1){
+            $('#msg').css("color","red");
+            $('#msg').html(message);
+            alert(message);
+        }
+}

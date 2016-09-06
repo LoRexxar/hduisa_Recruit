@@ -12,7 +12,6 @@ if($res = $pdo1->query($sql,PDO::FETCH_ASSOC)){
 	$res = $res->fetchAll();
 	$res = $res[0];
 	$res['direction'] = json_decode($res['direction']);
-    var_dump($res);
     }
     else {
     	header("Location:index.html");
@@ -31,58 +30,104 @@ else {
     <title>新生信息管理系统</title>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/LoRexxar.css">
+    <link rel="stylesheet" href="../css/styles.css">    
     <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="../js/Undefined.js"></script>
 </head>
-<body style="background-color: black">
-<div style="width:1300px;height:603px;background-image:url('../img/isa1.jpg');background-position: center;background-repeat: repeat-y">
+<body>
+<div class="container back" style="height: 100vh; width: 100vw; margin-top:0px">
+    
     <!-- body -->
-    <div class="row">
-        <div style="height:100px"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-1">
+    <div class="row head container">
+        <div class="navbar-header">
+            <p class="navbar-brand">Welcome <?php echo htmlspecialchars($_SESSION['username']);?></p>
+            <a class="navbar-brand head-text" href="javascript:;" onclick="logout()">退出</a>
+            <p class="navbar-brand head-text" id="msg"></p>
         </div>
-        <div class="col-md-1">
-            <form id="modify-form" action="modify.php" method="POST" >
-                <input type="hidden" maxlength="20" class="edit-message" style="width:150px;" name="id" value="<?php echo $res['id'];?>">
-                <br/>
 
-                <label style="width:100px;text-align:right;">姓名</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="name" value="<?php echo htmlspecialchars($res['name']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">学号</label>
-                <input type="text" maxlength="8" class="edit-message" style="width:200px;" name="studyNumber" value="<?php echo htmlspecialchars($res['studyNumber']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">email</label>
-                <input type="text" maxlength="60" class="edit-message" style="width:200px;" name="email" value="<?php echo htmlspecialchars($res['email']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">学院</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="college" value="<?php echo htmlspecialchars($res['college']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">专业</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="major" value="<?php echo htmlspecialchars($res['major']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">手机号</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="phone" value="<?php echo htmlspecialchars($res['phone']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">性别</label>
-                <select name="sex"  class="edit-message">
+        <div class="navbar-collapse collapse">
+            <form class="form-search form-signin navbar-form navbar-right"  action="search.php" method="GET">
+                <Select NAME="field" class="form-control head-text">   
+                <Option VALUE="name">姓名</option>   
+                <Option VALUE="oldDriver">老司机</option>  
+                <Option VALUE="studyNumber">学号</option>    
+                </Select> 
+
+                <input type="text" class="input-medium search-query form-control head-text"  style="margin-left:20px" name="keywords">
+                <button type="submit"  style="margin-left:20px; min-width:100px" class="btn form-control head-text">Search</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+
+        <div class="col-md-1">
+
+            <form id="modify-form" class="form-signin" action="modify.php" method="POST" >
+                <div class="row froms" style="float:left">
+                <input type="hidden" maxlength="20" class="form-control edit-message" style="width:150px;" name="id" value="<?php echo $res['id'];?>">
+                </div>
+                
+                <div class="row froms">
+                <h4 class="white" >姓名:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="name" value="<?php echo htmlspecialchars($res['name']);?>">
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">学号:</h4>
+                <input type="text" maxlength="8" class="form-control edit-message" style="margin-top: 9px" name="studyNumber" value="<?php echo htmlspecialchars($res['studyNumber']);?>">
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">email:</h4>
+                <input type="text" maxlength="60" class="form-control edit-message" style="margin-top: 9px" name="email" value="<?php echo htmlspecialchars($res['email']);?>">
+                 </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">学院:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="college" value="<?php echo htmlspecialchars($res['college']);?>">
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">专业:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="major" value="<?php echo htmlspecialchars($res['major']);?>">
+                </div>
+
+                <div class="row froms"> 
+                <h4 class="white" style="display:inline;">手机号:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="phone" value="<?php echo htmlspecialchars($res['phone']);?>">
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">性别:</h4>
+                <select name="sex"  class="form-control">
 				  <option value ="0" <?php if($res['sex']==0) echo "selected=\"selected\"";?>>男</option>
 				  <option value ="1" <?php if($res['sex']==1) echo "selected=\"selected\"";?>>女</option>
 				  <option value="2" <?php if($res['sex']==2) echo "selected=\"selected\"";?>>保密</option>
 				</select>
-                <br/>
-                <label style="width:100px;text-align:right;">qq</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="qq" value="<?php echo htmlspecialchars($res['qq']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">自我介绍</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="Introduction" value="<?php echo htmlspecialchars($res['Introduction']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">备注</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="note" value="<?php echo htmlspecialchars($res['note']);?>">
-                <br/>
-                <label style="width:100px;text-align:right;">方向</label>
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">qq:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="qq" value="<?php echo htmlspecialchars($res['qq']);?>">
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">自我介绍:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="Introduction" value="<?php echo htmlspecialchars($res['Introduction']);?>">
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">备注:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="note" value="<?php echo htmlspecialchars($res['note']);?>">
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">方向:</h4>
 			      <div class="list-block">
 			        <ul class="interest-ul" style="float:left;width:500px;">
 			        	<?php 
@@ -131,10 +176,13 @@ else {
 			          <p style="letter-spacing:1px;line-height:22px;color:#888">
 			        </div>
 			      </div>
-                <br/>
-                <label style="width:100px;text-align:right;">带领学长</label>
-                <input type="text" maxlength="20" class="edit-message" style="width:200px;" name="seniorname" value="<?php echo htmlspecialchars($res['seniorname']);?>">
-                <br/>
+                </div>
+
+                <div class="row froms">
+                <h4 class="white" style="display:inline;">学长:</h4>
+                <input type="text" maxlength="20" class="form-control edit-message" style="width:200px;" name="seniorname" value="<?php echo htmlspecialchars($res['seniorname']);?>">
+                </div>
+
                 <div style="width:500px;">
                     <input style="btn btn-outline-inverse btn-lg" class="btn" type="button" value="修改"  onclick="edit()" />
                     <br/><a href="user.php">返回新生列表</a>

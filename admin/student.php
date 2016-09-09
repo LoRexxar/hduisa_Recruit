@@ -181,7 +181,15 @@ else {
 
                      <div class="row froms">
                 <h4 class="white" style="display:inline;">评价:</h4>
-                <input type="text" class="form-control edit-message" style="margin-top: 9px" name="evaluate" value="<?php echo htmlspecialchars($res['evaluate']);?>">
+                  <select class="form-control edit-message" name="evaluate" >
+                    <option value="A1" <?php if(htmlspecialchars($res['evaluate'])=="A1")echo "selected=\"selected\"";?>>A1 棒棒哒</option>
+                    <option value="A2" <?php if(htmlspecialchars($res['evaluate'])=="A2")echo "selected=\"selected\"";?>>A2 </option>
+                    <option value="A3" <?php if(htmlspecialchars($res['evaluate'])=="A3")echo "selected=\"selected\"";?>>A3 </option>
+                    <option value="B1" <?php if(htmlspecialchars($res['evaluate'])=="B1")echo "selected=\"selected\"";?>>B1 挺不错</option>
+                    <option value="B2" <?php if(htmlspecialchars($res['evaluate'])=="B2")echo "selected=\"selected\"";?>>B2</option>
+                    <option value="B3" <?php if(htmlspecialchars($res['evaluate'])=="B3")echo "selected=\"selected\"";?>>B3</option>
+                    <option value="C" <?php if(htmlspecialchars($res['evaluate'])=="C")echo "selected=\"selected\"";?>>C 还需努力</option>
+                  </select>
                 </div>
 
                 <div class="row froms">

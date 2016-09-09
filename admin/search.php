@@ -22,6 +22,9 @@ if(isset($_SESSION['username'])&&(!empty($_SESSION['username']))){
 		elseif($field == 'oldDriver'){
 			$sql = "select * from user where seniorname like'%".$keywords."%'";
 		}
+		elseif($field == 'evaluate'){
+			$sql = "select * from user where evaluate like'%".$keywords."%'";
+		}
 		else{
 			$sql = "select * from user";
 		}
@@ -54,7 +57,6 @@ else {
     <link rel="stylesheet" href="../css/LoRexxar.css">
     <link rel="stylesheet" href="../css/styles.css"> 	
     <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/Undefined.js"></script>
 </head>
 <body>
 <div class="container back" style="height: 100vh; width: 100vw; margin-top:0px">
@@ -67,10 +69,11 @@ else {
 
 		<div class="navbar-collapse collapse">
 		    <form class="form-search form-signin navbar-form navbar-right"  action="search.php" method="GET">
-			    <Select NAME="field" class="form-control head-text">   
+			    <Select NAME="field" class="form-control head-text" onclick="onsearch(this)">   
 				<Option VALUE="name">姓名</option>   
 				<Option VALUE="oldDriver">老司机</option>  
-				<Option VALUE="studyNumber">学号</option>    
+				<Option VALUE="studyNumber">学号</option>
+				<Option VALUE="evaluate">评价</option>     
 				</Select> 
 
 				<input type="text" class="input-medium search-query form-control head-text"  style="margin-left:20px" name="keywords">
@@ -139,5 +142,6 @@ else {
 			</ul>
 		</div>
 	</div>
+	    <script type="text/javascript" src="../js/Undefined.js"></script>
 </body>
 </html>

@@ -32,8 +32,6 @@ else {
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/LoRexxar.css">
     <link rel="stylesheet" href="../css/styles.css">    
-    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/Undefined.js"></script>
 </head>
 <body>
 <div class="container back" style="height: 100vh; width: 100vw; margin-top:0px">
@@ -48,10 +46,11 @@ else {
 
         <div class="navbar-collapse collapse">
             <form class="form-search form-signin navbar-form navbar-right"  action="search.php" method="GET">
-                <Select NAME="field" class="form-control head-text">   
-                <Option VALUE="name">姓名</option>   
-                <Option VALUE="oldDriver">老司机</option>  
-                <Option VALUE="studyNumber">学号</option>    
+                <Select NAME="field" class="form-control head-text" onclick="onsearch(this)">   
+                <Option VALUE="name" >姓名</option>   
+                <Option VALUE="oldDriver" >老司机</option>  
+                <Option VALUE="studyNumber" >学号</option>  
+                <Option VALUE="evaluate" >评价</option>   
                 </Select> 
 
                 <input type="text" class="input-medium search-query form-control head-text"  style="margin-left:20px" name="keywords">
@@ -122,7 +121,7 @@ else {
                 </div>
 
                 <div class="row froms">
-                <h4 class="white" style="display:inline;">备注:</h4>
+                <h4 class="white" style="display:inline;" >备注:</h4>
                 <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="note" value="<?php echo htmlspecialchars($res['note']);?>">
                 </div>
 
@@ -182,12 +181,12 @@ else {
                      <div class="row froms">
                 <h4 class="white" style="display:inline;">评价:</h4>
                   <select class="form-control edit-message" name="evaluate" >
-                    <option value="A1" <?php if(htmlspecialchars($res['evaluate'])=="A1")echo "selected=\"selected\"";?>>A1 棒棒哒</option>
-                    <option value="A2" <?php if(htmlspecialchars($res['evaluate'])=="A2")echo "selected=\"selected\"";?>>A2 </option>
-                    <option value="A3" <?php if(htmlspecialchars($res['evaluate'])=="A3")echo "selected=\"selected\"";?>>A3 </option>
-                    <option value="B1" <?php if(htmlspecialchars($res['evaluate'])=="B1")echo "selected=\"selected\"";?>>B1 挺不错</option>
-                    <option value="B2" <?php if(htmlspecialchars($res['evaluate'])=="B2")echo "selected=\"selected\"";?>>B2</option>
-                    <option value="B3" <?php if(htmlspecialchars($res['evaluate'])=="B3")echo "selected=\"selected\"";?>>B3</option>
+                    <option value="A+" <?php if(htmlspecialchars($res['evaluate'])=="A+")echo "selected=\"selected\"";?>>A+ 棒棒哒</option>
+                    <option value="A" <?php if(htmlspecialchars($res['evaluate'])=="A")echo "selected=\"selected\"";?>>A </option>
+                    <option value="A-" <?php if(htmlspecialchars($res['evaluate'])=="A-")echo "selected=\"selected\"";?>>A- </option>
+                    <option value="B+" <?php if(htmlspecialchars($res['evaluate'])=="B+")echo "selected=\"selected\"";?>>B+ 挺不错</option>
+                    <option value="B" <?php if(htmlspecialchars($res['evaluate'])=="B")echo "selected=\"selected\"";?>>B</option>
+                    <option value="B-" <?php if(htmlspecialchars($res['evaluate'])=="B-")echo "selected=\"selected\"";?>>B-</option>
                     <option value="C" <?php if(htmlspecialchars($res['evaluate'])=="C")echo "selected=\"selected\"";?>>C 还需努力</option>
                   </select>
                 </div>
@@ -206,5 +205,7 @@ else {
     </div>
 
 </div>
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/Undefined.js"></script>
 </body>
 </html>

@@ -11,6 +11,30 @@
             alert('something wrong error 002');
         }
     });*/
+    keepfield();
+    function keepfield(){
+        field = getCookie("field");
+        var arr = ['name','oldDriver','studyNumber','evaluate'
+        ];
+        if($.inArray(field,arr)){
+            document.getElementsByName('field')[0].value = field;
+        }
+    }
+    function getCookie(cookieName) {
+    var strCookie = document.cookie;
+    var arrCookie = strCookie.split("; ");
+    for(var i = 0; i < arrCookie.length; i++){
+        var arr = arrCookie[i].split("=");
+        if(cookieName == arr[0]){
+            return arr[1];
+        }
+    }
+    return "";
+}
+    $("#field").attr("onclick","onsearch(this)");
+    function onsearch(obj){
+        document.cookie="field="+obj.value;
+    }
     function edit(){
         var formArray = $('.edit-message');
       var ajaxObj = {};

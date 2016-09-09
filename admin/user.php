@@ -16,10 +16,7 @@ if(isset($_SESSION['username'])&&(!empty($_SESSION['username']))){
 		if($res = $pdo1->query($sql,PDO::FETCH_ASSOC)){
 		$res = $res->fetchAll();
 		$studentNum = count($res);
-		$pages = $studentNum/20;
-		if($studentNum%20>0){
-			$pages+=1;
-		}
+		$pages = ceil($studentNum/20);
 	}
 	$sql = "select * from user limit ".($pageId-1)*$pageSize.",".$pageSize;
 	if($res = $pdo1->query($sql,PDO::FETCH_ASSOC)){

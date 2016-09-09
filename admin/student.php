@@ -179,6 +179,11 @@ else {
 			      </div>
                 </div>
 
+                     <div class="row froms">
+                <h4 class="white" style="display:inline;">评价:</h4>
+                <input type="text" class="form-control edit-message" style="margin-top: 9px" name="evaluate" value="<?php echo htmlspecialchars($res['evaluate']);?>">
+                </div>
+
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">学长:</h4>
                 <input type="text" maxlength="20" class="form-control edit-message" style="width:200px;" name="seniorname" value="<?php echo htmlspecialchars($res['seniorname']);?>">

@@ -10,7 +10,7 @@ if(!empty($_POST)){
     $data = translate($data);
     $data['department'] = json_encode($data['department']);
 
-        $sql = "update user set name='".$data['name']."', studyNumber='".$data['studyNumber']."', email='".$data['email']."',college='".$data['college']."',major='".$data['major']."',phone=".$data['phone'].",sex='".$data['sex']."',qq=".$data['qq'].",Introduction='".$data['Introduction']."',note='".$data['note']."',seniorname='".$data['seniorname']."',direction=".$data['department']." where id =".$data['id'];
+        $sql = "update user set name='".$data['name']."', studyNumber='".$data['studyNumber']."', email='".$data['email']."',college='".$data['college']."',major='".$data['major']."',phone=".$data['phone'].",sex='".$data['sex']."',qq=".$data['qq'].",Introduction='".$data['Introduction']."',note='".$data['note']."',seniorname='".$data['seniorname']."',direction=".$data['department'].",evaluate='".$data['evaluate']."' where id =".$data['id'];
         if($pdo1->exec($sql)){
             $response['code'] = "0";
             $response['message'] = "修改成功!";

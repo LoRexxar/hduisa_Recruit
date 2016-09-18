@@ -44,20 +44,7 @@ else {
             <p class="navbar-brand head-text" id="msg"></p>
         </div>
 
-        <div class="navbar-collapse collapse">
-            <form class="form-search form-signin navbar-form navbar-right"  action="search.php" method="GET">
-                <Select NAME="field" class="form-control head-text" onclick="onsearch(this)">   
-                <Option VALUE="name" >姓名</option>   
-                <Option VALUE="oldDriver" >老司机</option>  
-                <Option VALUE="studyNumber" >学号</option>  
-                <Option VALUE="evaluate" >评价</option>   
-                </Select> 
-
-                <input type="text" class="input-medium search-query form-control head-text"  style="margin-left:20px" name="keywords">
-                <button type="submit"  style="margin-left:20px; min-width:100px" class="btn form-control head-text">Search</button>
-            </form>
-
-        </div>
+        <?php include("searchForm.php");?>
     </div>
 
     <div class="row">
@@ -112,17 +99,21 @@ else {
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">qq:</h4>
-                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="qq" value="<?php echo htmlspecialchars($res['qq']);?>">
+                <input type="text" maxlength="12" class="form-control edit-message" style="margin-top: 9px" name="qq" value="<?php echo htmlspecialchars($res['qq']);?>">
                 </div>
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">自我介绍:</h4>
-                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="Introduction" value="<?php echo htmlspecialchars($res['Introduction']);?>">
+                <textarea class="form-control edit-message" style="margin-top: 9px" name="Introduction">
+                    <?php echo htmlspecialchars($res['Introduction']);?>
+                </textarea>
                 </div>
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;" >备注:</h4>
-                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="note" value="<?php echo htmlspecialchars($res['note']);?>">
+                <textarea class="form-control edit-message" style="margin-top: 9px" name="note">
+                    <?php echo htmlspecialchars($res['note']);?>
+                </textarea>
                 </div>
 
                 <div class="row froms">

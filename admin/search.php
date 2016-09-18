@@ -25,6 +25,17 @@ if(isset($_SESSION['username'])&&(!empty($_SESSION['username']))){
 		elseif($field == 'evaluate'){
 			$sql = "select * from user where evaluate like'%".$keywords."%'";
 		}
+		elseif($field == 'direction'){
+			$sql1 = "select id from department where depart_name like '%".$keywords."%' limit 1";
+			if($res = $pdo1->query($sql1,PDO::FETCH_ASSOC)){
+				$res = $res->fetchAll();
+				$dirId = $res[0]['id'];
+			}
+			else{
+				die("something wrong at getId");
+			}
+			$sql = "select * from user where direction like'%\"".$dirId."\"%'";
+		}
 		else{
 			$sql = "select * from user";
 		}
@@ -67,20 +78,7 @@ else {
 			<p class="navbar-brand head-text" id="msg"></p>
 		</div>
 
-		<div class="navbar-collapse collapse">
-		    <form class="form-search form-signin navbar-form navbar-right"  action="search.php" method="GET">
-			    <Select NAME="field" class="form-control head-text" onclick="onsearch(this)">   
-				<Option VALUE="name">姓名</option>   
-				<Option VALUE="oldDriver">老司机</option>  
-				<Option VALUE="studyNumber">学号</option>
-				<Option VALUE="evaluate">评价</option>     
-				</Select> 
-
-				<input type="text" class="input-medium search-query form-control head-text"  style="margin-left:20px" name="keywords">
-				<button type="submit"  style="margin-left:20px; min-width:100px" class="btn form-control head-text">Search</button>
-			</form>
-
-		</div>
+		<?php include("searchForm.php");?>
 	</div>
 
 	<div class="row"></div>

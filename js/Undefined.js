@@ -136,7 +136,7 @@
         dataType: "text",
         async: false,
         success: function (payloads) {
-            show(payloads,'index.html');
+            show(payloads,'index.php');
         },
         error: function () {
             alert('something wrong error 009');

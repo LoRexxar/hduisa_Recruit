@@ -14,38 +14,16 @@ if($res = $pdo1->query($sql,PDO::FETCH_ASSOC)){
 	$res['direction'] = json_decode($res['direction']);
     }
     else {
-    	header("Location:index.html");
+    	header("Location:index.php");
     	exit;
     }
 }
 else {
-    header("Location:index.html");
+    header("Location:index.php");
     exit;
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>新生信息管理系统</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/LoRexxar.css">
-    <link rel="stylesheet" href="../css/styles.css">    
-</head>
-<body>
-<div class="container back" style="height: 100vh; width: 100vw; margin-top:0px">
-    
-    <!-- body -->
-    <div class="row head container">
-        <div class="navbar-header">
-            <p class="navbar-brand">Welcome <?php echo htmlspecialchars($_SESSION['username']);?></p>
-            <a class="navbar-brand head-text" href="javascript:;" onclick="logout()">退出</a>
-            <p class="navbar-brand head-text" id="msg"></p>
-        </div>
-
-        <?php include("searchForm.php");?>
-    </div>
+<?php include("templates/header.php");?>
 
     <div class="row">
         <div class="col-md-3">

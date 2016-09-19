@@ -82,7 +82,7 @@ function dataValidate($data){
         unset($response);
         exit;
     }
-    $evaluates = array('A+','A','A-','B+','B','B-','C');
+/*    $evaluates = array('A+','A','A-','B+','B','B-','C');
     if(!in_array($data['evaluate'],$evaluates)){
         $response['code'] = "1";
         $response['message'] = "评价字符非法";
@@ -90,7 +90,7 @@ function dataValidate($data){
         echo $response;
         unset($response);
         exit;
-    }
+    }*/
 }
 
  ?>

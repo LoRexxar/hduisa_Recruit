@@ -9,7 +9,7 @@ if(!empty($_POST)){
     $data = translate($data);
     $data['department'] = json_encode($data['department']);
 
-        $sql = "insert into user(name,studyNumber,email,college,major,phone,sex,qq,Introduction,note,direction,evaluate) values('".$data['userName']."','".$data['studyNumber']."','".$data['email']."','".$data['college']."','".$data['major']."','".$data['phone']."',".$data['userSex'].",'".$data['qq']."','".$data['selfIntro']."','".$data['remark']."',".$data['department'].",'".$data['evaluate']."')";
+        $sql = "insert into user(name,studyNumber,email,college,major,phone,sex,qq,Introduction,note,direction) values('".$data['userName']."','".$data['studyNumber']."','".$data['email']."','".$data['college']."','".$data['major']."','".$data['phone']."',".$data['userSex'].",'".$data['qq']."','".$data['selfIntro']."','".$data['remark']."',".$data['department'].")";
 
 
         dataValidate($data);

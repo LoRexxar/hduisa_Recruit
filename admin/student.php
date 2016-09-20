@@ -167,7 +167,7 @@ else {
 
                 <div style="width:500px;">
                     <input style="btn btn-outline-inverse btn-lg" class="btn" type="button" value="修改"  onclick="edit()" />
-                    <br/><a href="user.php">返回新生列表</a>
+                    <br/><a href="user.php" class="white">返回新生列表</a>
             </form>
             <div class="row"><p id = "msg"></p></div>
         </div>

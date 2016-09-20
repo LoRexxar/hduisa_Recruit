@@ -48,8 +48,14 @@ if(!empty($_POST)){
             exit;
     }
 
-        $sql = "insert into user(username,password) values('".$data['username']."','".md5($data['password1'])."')";
-        if($pdo2->exec($sql)){
+/*        $sql = "insert into user(username,password) values('".$data['username']."','".md5($data['password1'])."')";*/
+        $sql = "insert into user(username,password) values(:username,:password)";
+        
+        $res = $pdo2->prepare($sql);
+        $res->bindValue(":username",$data['username']);
+        $res->bindValue(":password",md5($data['password1']));
+
+        if($res->execute()){
             $response['code'] = "0";
             $response['message'] = "注册成功!";
             $response = json_encode($response);

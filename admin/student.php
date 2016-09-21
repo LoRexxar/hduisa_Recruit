@@ -82,16 +82,12 @@ else {
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">自我介绍:</h4>
-                <textarea class="form-control edit-message" style="margin-top: 9px" name="Introduction">
-                    <?php echo htmlspecialchars($res['Introduction']);?>
-                </textarea>
+                <textarea class="form-control edit-message" style="margin-top: 9px" name="Introduction"><?php echo htmlspecialchars($res['Introduction']);?></textarea>
                 </div>
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;" >备注:</h4>
-                <textarea class="form-control edit-message" style="margin-top: 9px" name="note">
-                    <?php echo htmlspecialchars($res['note']);?>
-                </textarea>
+                <textarea class="form-control edit-message" style="margin-top: 9px" name="note"><?php echo htmlspecialchars($res['note']);?></textarea>
                 </div>
 
                 <div class="row froms">

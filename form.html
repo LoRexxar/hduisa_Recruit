@@ -24,7 +24,7 @@
               <div class="item-inner"> 
                 <div class="item-title label">姓名</div>
                 <div class="item-input">
-                  <input type="text" class="reg-message" name="userName" placeholder="Your name"/>
+                  <input type="text" class="reg-message" name="name" placeholder="Your name"/>
                 </div>
               </div>
             </div>
@@ -40,6 +40,38 @@
               </div>
             </div>
           </li>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-gender"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">性别</div>
+                <div class="item-input">
+                  <select class="reg-message" name="sex">
+                    <option value="0">男</option>
+                    <option value="1">女</option>
+                    <option value="2">其他</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block-title">注册信息 (选填条目)</div>
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-media"><i class="icon icon-form-qq"></i></div>
+              <div class="item-inner"> 
+                <div class="item-title label">QQ</div>
+                <div class="item-input">
+                  <input type="text" class="reg-message" name="qq" placeholder="QQ"/>
+                </div>
+              </div>
+            </div>
+          </li>
+
           <li>
             <div class="item-content">
               <div class="item-media"><i class="icon icon-form-email"></i></div>
@@ -84,44 +116,13 @@
               </div>
             </div>
           </li>
-          <li>
-            <div class="item-content">
-              <div class="item-media"><i class="icon icon-form-gender"></i></div>
-              <div class="item-inner"> 
-                <div class="item-title label">性别</div>
-                <div class="item-input">
-                  <select class="reg-message" name="userSex">
-                    <option value="0">男</option>
-                    <option value="1">女</option>
-                    <option value="2">其他</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="content-block-title">注册信息 (选填条目)</div>
-      <div class="list-block">
-        <ul>
-          <li>
-            <div class="item-content">
-              <div class="item-media"><i class="icon icon-form-qq"></i></div>
-              <div class="item-inner"> 
-                <div class="item-title label">QQ</div>
-                <div class="item-input">
-                  <input type="text" class="reg-message" name="qq" placeholder="QQ"/>
-                </div>
-              </div>
-            </div>
-          </li>
           <li class="align-top">
             <div class="item-content">
               <div class="item-media"><i class="icon icon-form-comment"></i></div>
               <div class="item-inner"> 
                 <div class="item-title label">自我介绍</div>
                 <div class="item-input">
-                  <textarea class="reg-message" name="selfIntro" placeholder="不超过5000个字符"></textarea>
+                  <textarea class="reg-message" name="Introduction" placeholder="不超过5000个字符"></textarea>
                 </div>
               </div>
             </div>
@@ -132,26 +133,7 @@
               <div class="item-inner"> 
                 <div class="item-title label">备注</div>
                 <div class="item-input">
-                  <textarea class="reg-message" name="remark" placeholder="不超过1000个字符"></textarea>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-media"><i class="icon icon-form-gender"></i></div>
-              <div class="item-inner"> 
-                <div class="item-title label">对招新系统的评价</div>
-                <div class="item-input">
-                  <select class="reg-message" name="evaluate">
-                    <option value="A+">A+ 棒棒哒</option>
-                    <option value="A">A </option>
-                    <option value="A-">A- </option>
-                    <option value="B+">B+ 挺不错</option>
-                    <option value="B">B</option>
-                    <option value="B-">B-</option>
-                    <option value="C">C 还需努力</option>
-                  </select>
+                  <textarea class="reg-message" name="note" placeholder="不超过1000个字符"></textarea>
                 </div>
               </div>
             </div>

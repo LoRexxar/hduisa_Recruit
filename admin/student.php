@@ -14,51 +14,16 @@ if($res = $pdo1->query($sql,PDO::FETCH_ASSOC)){
 	$res['direction'] = json_decode($res['direction']);
     }
     else {
-    	header("Location:index.html");
+    	header("Location:index.php");
     	exit;
     }
 }
 else {
-    header("Location:index.html");
+    header("Location:index.php");
     exit;
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>新生信息管理系统</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/LoRexxar.css">
-    <link rel="stylesheet" href="../css/styles.css">    
-</head>
-<body>
-<div class="container back" style="height: 100vh; width: 100vw; margin-top:0px">
-    
-    <!-- body -->
-    <div class="row head container">
-        <div class="navbar-header">
-            <p class="navbar-brand">Welcome <?php echo htmlspecialchars($_SESSION['username']);?></p>
-            <a class="navbar-brand head-text" href="javascript:;" onclick="logout()">退出</a>
-            <p class="navbar-brand head-text" id="msg"></p>
-        </div>
-
-        <div class="navbar-collapse collapse">
-            <form class="form-search form-signin navbar-form navbar-right"  action="search.php" method="GET">
-                <Select NAME="field" class="form-control head-text" onclick="onsearch(this)">   
-                <Option VALUE="name" >姓名</option>   
-                <Option VALUE="oldDriver" >老司机</option>  
-                <Option VALUE="studyNumber" >学号</option>  
-                <Option VALUE="evaluate" >评价</option>   
-                </Select> 
-
-                <input type="text" class="input-medium search-query form-control head-text"  style="margin-left:20px" name="keywords">
-                <button type="submit"  style="margin-left:20px; min-width:100px" class="btn form-control head-text">Search</button>
-            </form>
-
-        </div>
-    </div>
+<?php include("templates/header.php");?>
 
     <div class="row">
         <div class="col-md-3">
@@ -112,17 +77,21 @@ else {
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">qq:</h4>
-                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="qq" value="<?php echo htmlspecialchars($res['qq']);?>">
+                <input type="text" maxlength="12" class="form-control edit-message" style="margin-top: 9px" name="qq" value="<?php echo htmlspecialchars($res['qq']);?>">
                 </div>
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;">自我介绍:</h4>
-                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="Introduction" value="<?php echo htmlspecialchars($res['Introduction']);?>">
+                <textarea class="form-control edit-message" style="margin-top: 9px" name="Introduction">
+                    <?php echo htmlspecialchars($res['Introduction']);?>
+                </textarea>
                 </div>
 
                 <div class="row froms">
                 <h4 class="white" style="display:inline;" >备注:</h4>
-                <input type="text" maxlength="20" class="form-control edit-message" style="margin-top: 9px" name="note" value="<?php echo htmlspecialchars($res['note']);?>">
+                <textarea class="form-control edit-message" style="margin-top: 9px" name="note">
+                    <?php echo htmlspecialchars($res['note']);?>
+                </textarea>
                 </div>
 
                 <div class="row froms">
@@ -198,7 +167,7 @@ else {
 
                 <div style="width:500px;">
                     <input style="btn btn-outline-inverse btn-lg" class="btn" type="button" value="修改"  onclick="edit()" />
-                    <br/><a href="user.php">返回新生列表</a>
+                    <br/><a href="user.php" class="white">返回新生列表</a>
             </form>
             <div class="row"><p id = "msg"></p></div>
         </div>
